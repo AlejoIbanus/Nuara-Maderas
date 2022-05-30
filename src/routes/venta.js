@@ -4,10 +4,19 @@ const Venta = require('../models/ventas')
 
 
 router.get('/ventas', async (req,res) => {
-    const ventas= await Venta.find().lean();
-   
+    if(req.query.buscador){
+        
+        const ventas= await Venta.find({
+        cliente:{
+            $regex:req.query.buscador
+        }}).lean();
+        
+        res.render('ventas', {ventas : ventas});
+    }else {
+         const ventas= await Venta.find().lean();
+         res.render('ventas', {ventas : ventas});
+    }
     
-     res.render('ventas', {ventas : ventas});
  });
 
  router.get('/addVenta', (req,res) => {

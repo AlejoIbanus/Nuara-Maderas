@@ -64,3 +64,22 @@ a{
     padding: 5px;
 
 }
+
+.inputBuscar{
+   width: 100vw;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.inputNada{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    
+}
+.inputTodos{
+    display: grid;
+    place-items: center;
+    margin-bottom: 10px;
+}

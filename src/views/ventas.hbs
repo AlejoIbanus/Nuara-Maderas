@@ -8,10 +8,25 @@
     </tr>
   </thead>
   <tbody >
+   <form action="/ventas" method="GET" >
+     <div class="inputBuscar">
+      <div class="inputNada">
+        <input type="text" name="buscador" id="buscador" placeholder="Buscar por nombre"  >
+        <input type="submit" name="buscar" id="buscar" value="Buscar..." >
+      </div>
+      <div class="inputTodos">
+        <form action="/ventas" method="GET">
+        <input class="inputTodo" type="submit" value="Ver todas"></form>
+      </div>
+     
+     </div>
+     
+   </form>
+   
    {{#each ventas}}
     <tr class="body-ventas">
      
-      <td>{{cliente}}</td>
+      <td class="cliente">{{cliente}}</td>
       <td>{{cuil}}</td>
       <td>{{monto}}</td>
       <td>{{fecha}}</td>
