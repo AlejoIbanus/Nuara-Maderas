@@ -1,9 +1,11 @@
 const express = require('express');
-const indexRoute = require('./routes/index.routes')
+const indexRoute = require('./routes/index.routes');
 const {engine} = require('express-handlebars');
 const path = require('path');
 const { resolveSoa } = require('dns');
 const app = express();
+const clientesRoute = require('./routes/clientes');
+const ventasRoute = require('./routes/venta')
 
 
 
@@ -16,9 +18,11 @@ app.engine('.hbs', engine({
 
 );
 app.set('view engine', '.hbs');
-app.use('/public', express.static(path.join(__dirname, 'public')))
+app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended:false}));
-app.use(indexRoute)
+app.use(indexRoute);
+app.use(clientesRoute);
+app.use(ventasRoute);
 
 
 
