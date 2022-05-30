@@ -1,0 +1,31 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre del cliente</th>
+      <th scope="col">Numero del cliente</th>
+      <th scope="col">Cuanto debe?</th>
+    </tr>
+  </thead>
+  <tbody>
+   {{#each clientes}}
+    <tr class="tr-container">
+     <div>
+       <td>{{name}}</td>
+      <td>{{number}}</td>
+      <td>{{debe}}</td>
+      </div>
+      <div> <td class="td-container">
+          <a class="botonEditar" href="/editClientes/{{_id}}">Editar</a>
+          <a class="botonEliminar" href="/deleteCliente/{{_id}}">Eliminar</a>
+      </td>
+      </div>
+      
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
+
+
+<a class="agregarVenta" href="/addCliente">Agregar cliente</a>

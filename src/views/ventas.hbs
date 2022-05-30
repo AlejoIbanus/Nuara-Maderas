@@ -1,0 +1,28 @@
+<table class="table ">
+  <thead>
+    <tr>
+      <th scope="col">Cliente</th>
+      <th scope="col">Cuil</th>
+      <th scope="col">Monto</th>
+    <th scope="col">Fecha</th>
+    </tr>
+  </thead>
+  <tbody >
+   {{#each ventas}}
+    <tr class="body-ventas">
+     
+      <td>{{cliente}}</td>
+      <td>{{cuil}}</td>
+      <td>{{monto}}</td>
+      <td>{{fecha}}</td>
+      <td class="td-container2">
+          <a class="botonEditar" href="/editVenta/{{_id}}">Editar</a>
+          <a class="botonEliminar" href="/deleteVenta/{{_id}}">Eliminar</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
+<a class="agregarVenta" href="/addVenta">Agregar venta</a>

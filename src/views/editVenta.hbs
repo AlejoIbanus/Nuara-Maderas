@@ -1,0 +1,22 @@
+<form action="/editVenta/{{ventas._id}}" method="POST">
+  <div class="mb-3">
+    <label for="cliente" class="form-label">Nombre del cliente</label>
+    <input type="text" class="form-control" id="cliente" name="cliente" value="{{ventas.cliente}}">
+  </div>
+  <div class="mb-3">
+    <label for="cuil" class="form-label">Cuil del cliente</label>
+    <input type="text" class="form-control" id="cuil" name="cuil" value="{{ventas.cuil}}">
+  </div>
+  <div class="mb-3">
+    <label for="monto" class="form-label">Monto de la venta</label>
+    <input type="text" class="form-control" id="monto" name="monto" value="{{ventas.monto}}">
+  </div>
+   <div class="mb-3">
+    <label for="fecha" class="form-label">Fecha de la venta</label>
+    <input type="text" class="form-control" id="fecha" name="fecha" value="{{ventas.fecha}}">
+  </div>
+  
+  <div class="boton-container">
+      <button type="submit" class="btn btn-primary ">Editar</button>
+  </div>
+</form>

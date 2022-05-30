@@ -1,0 +1,13 @@
+<form action="/edit/{{madera._id}}" method="POST">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre de la madera</label>
+    <input type="text" class="form-control" id="name" name="name" value="{{madera.name}}">
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Precio</label>
+    <input type="text" class="form-control" id="price" name="price" value="{{madera.price}}">
+  </div>
+  <div class="boton-container">
+      <button type="submit" class="btn btn-primary ">Editar</button>
+  </div>
+</form>

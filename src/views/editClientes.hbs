@@ -1,0 +1,18 @@
+<form action="/editClientes/{{clientes._id}}" method="POST">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre del cliente</label>
+    <input type="text" class="form-control" id="name" name="name" value="{{clientes.name}}">
+  </div>
+  <div class="mb-3">
+    <label for="number" class="form-label">Numero del cliente</label>
+    <input type="text" class="form-control" id="Number" name="number" value="{{clientes.number}}">
+  </div>
+  <div class="mb-3">
+    <label for="debe" class="form-label">Debe</label>
+    <input type="text" class="form-control" id="debe" name="debe" value="{{clientes.debe}}">
+  </div>
+  
+  <div class="boton-container">
+      <button type="submit" class="btn btn-primary ">Editar</button>
+  </div>
+</form>
