@@ -6,6 +6,7 @@ const { resolveSoa } = require('dns');
 const app = express();
 const clientesRoute = require('./routes/clientes');
 const ventasRoute = require('./routes/venta')
+const comprasRoute = require('./routes/compra')
 
 
 
@@ -23,6 +24,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(indexRoute);
 app.use(clientesRoute);
 app.use(ventasRoute);
+app.use(comprasRoute);
 
 
 

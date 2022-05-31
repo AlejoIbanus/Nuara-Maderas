@@ -1,0 +1,43 @@
+<table class="table ">
+  <thead>
+    <tr>
+      <th scope="col">Cliente</th>
+      <th scope="col">Cuil</th>
+      <th scope="col">Monto</th>
+    <th scope="col">Fecha</th>
+    </tr>
+  </thead>
+  <tbody >
+   <form action="/compras" method="GET" >
+     <div class="inputBuscar">
+      <div class="inputNada">
+        <input type="text" name="buscador" id="buscador" placeholder="Buscar por nombre"  >
+        <input type="submit" name="buscar" id="buscar" value="Buscar..." >
+      </div>
+      <div class="inputTodos">
+        <form action="/compras" method="GET">
+        <input class="inputTodo" type="submit" value="Ver todas"></form>
+      </div>
+     
+     </div>
+     
+   </form>
+   
+   {{#each compras}}
+    <tr class="body-ventas">
+     
+      <td class="cliente">{{proveedor}}</td>
+      <td>{{cuil}}</td>
+      <td>{{monto}}</td>
+      <td>{{fecha}}</td>
+      <td class="td-container2">
+          <a class="botonEditar" href="/editCompra/{{_id}}">Editar</a>
+          <a class="botonEliminar" href="/deleteCompra/{{_id}}">Eliminar</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
+<a class="agregarVenta" href="/addCompra">Agregar venta</a>
