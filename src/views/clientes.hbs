@@ -1,31 +1,41 @@
-<table class="table">
+<table class="table ">
   <thead>
     <tr>
-      <th scope="col">Nombre del cliente</th>
-      <th scope="col">Numero del cliente</th>
-      <th scope="col">Cuanto debe?</th>
+      <th scope="col">Nombre de cliente</th>
+      <th scope="col">Numero</th>
+      <th scope="col">Debe</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody >
+   <form action="/clientes" method="GET" >
+     <div class="inputBuscar">
+      <div class="inputNada">
+        <input type="text" name="buscador" id="buscador" placeholder="Buscar por nombre"  >
+        <input type="submit" name="buscar" id="buscar" value="Buscar..." >
+      </div>
+      <div class="inputTodos">
+        <form action="/clientes" method="GET">
+        <input class="inputTodo" type="submit" value="Ver todas"></form>
+      </div>
+     
+     </div>
+     
+   </form>
+   
    {{#each clientes}}
-    <tr class="tr-container">
-     <div>
-       <td>{{name}}</td>
-      <td>{{number}}</td>
+    <tr class="body-ventas">
+     
+      <td class="cliente">{{name}}</td>
+      <td>{{numero}}</td>
       <td>{{debe}}</td>
-      </div>
-      <div> <td class="td-container">
+      <td class="td-container2">
           <a class="botonEditar" href="/editClientes/{{_id}}">Editar</a>
-          <a class="botonEliminar" href="/deleteCliente/{{_id}}">Eliminar</a>
+          <a class="botonEliminar" href="/deleteClientes/{{_id}}">Eliminar</a>
       </td>
-      </div>
-      
     </tr>
     {{/each}}
   </tbody>
 </table>
-
-
 
 
 <a class="agregarVenta" href="/addCliente">Agregar cliente</a>

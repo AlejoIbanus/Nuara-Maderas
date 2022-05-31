@@ -5,10 +5,18 @@ const Cliente = require('../models/clientes');
 
 router.get('/clientes', async (req,res) => {
     
-    const clientes= await Cliente.find().lean();
-   
-   
-    res.render('clientes', {clientes: clientes});
+    if(req.query.buscador){
+        
+        const clientes= await Cliente.find({
+        name:{
+            $regex:req.query.buscador
+        }}).lean();
+        
+        res.render('clientes', {clientes : clientes});
+    }else {
+         const clientes= await Cliente.find().lean();
+         res.render('clientes', {clientes : clientes});
+    }
     
 });
 
