@@ -47,7 +47,6 @@ router.get('/editClientes/:id',async (req,res) => {
 
 router.get('/deleteCliente/:id', async (req,res)=>{
     const {id} = req.params;
-   console.log(id)
     await Cliente.findByIdAndDelete(id);
     const clientes = await Cliente.find().lean();
     res.render('clientes',{clientes:clientes})
